@@ -1,0 +1,55 @@
+<resources>
+    <bitmaps>
+    </bitmaps>
+
+    <fonts>
+    </fonts>
+
+   
+    <string id="circleUpLName">Nom de Sation 1 - Haut gauche</string>
+    <string id="circleUpRName">Nom de Sation 2 - Haut droite</string>
+    <string id="circleDownLName">Nom de Sation 3 - Bas gauche</string>
+    <string id="circleDownRName">Nom de Sation 4 - Bas droite</string>
+    <string id="id">id Station</string>
+    
+    <string id="title">V'Lille</string>
+  	<string id="parking">Parking</string>
+  	<string id="retrait">Retrait</string>
+    <properties>
+    	<property id="circleUpLName" type="string">Canteleu</property>
+    	<property id="circleUpLId" type="number">72</property>
+    	<property id="circleUpRName" type="string">Nv Siecle</property>
+    	<property id="circleUpRId" type="number">11</property>
+    	<property id="circleDownLName" type="string">Lomme</property>
+    	<property id="circleDownLId" type="number">119</property>
+    	<property id="circleDownRName" type="string">Rihour</property>
+    	<property id="circleDownRId" type="number">10</property>
+    </properties>
+    
+    <settings>
+    	<setting propertyKey="@Properties.circleUpLName" title="@Strings.circleUpLName">
+        	<settingConfig type="alphaNumeric" maxLength="10" required="true" />
+        </setting>
+        <setting propertyKey="@Properties.circleUpLId" title="@Strings.id">
+        	<settingConfig type="numeric"  required="true" />
+        </setting>
+        <setting propertyKey="@Properties.circleUpRName" title="@Strings.circleUpRName">
+        	<settingConfig type="alphaNumeric" maxLength="10" required="true" />
+        </setting>
+         <setting propertyKey="@Properties.circleUpRId" title="@Strings.id">
+        	<settingConfig type="numeric"  required="true" />
+        </setting>
+        <setting propertyKey="@Properties.circleDownLName" title="@Strings.circleDownLName">
+        	<settingConfig type="alphaNumeric" maxLength="10"  required="true" />
+        </setting>
+         <setting propertyKey="@Properties.circleDownLId" title="@Strings.id">
+        	<settingConfig type="numeric"  required="true" />
+        </setting>
+        <setting propertyKey="@Properties.circleDownRName" title="@Strings.circleDownRName">
+        	<settingConfig type="alphaNumeric" maxLength="10" required="true" />
+    	</setting>
+    	  <setting propertyKey="@Properties.circleDownRId" title="@Strings.id">
+        	<settingConfig type="numeric"  required="true" />
+        </setting>
+    </settings>    
+</resources>

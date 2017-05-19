@@ -1,0 +1,7 @@
+<drawable-list background="Gfx.COLOR_TRANSPARENT" id="circles">
+    <shape type="circle" x="40" y="50" radius="25" color="Gfx.COLOR_RED" ></shape>
+    <shape type="circle" x="175" y="50" radius="25" color="Gfx.COLOR_RED" />
+    <shape type="circle" x="40" y="130" radius="25" color="Gfx.COLOR_RED" ></shape>
+    <shape type="circle" x="175" y="130" radius="25" color="Gfx.COLOR_RED" />
+    
+</drawable-list>
