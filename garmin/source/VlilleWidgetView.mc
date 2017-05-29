@@ -76,22 +76,29 @@ class VlilleWidgetView extends Ui.View {
     
      function onReceive(args,circleSw,parking) {
      	parking_ = parking;
-        if (args instanceof Lang.String) {
-            if(circleSw == VlilleCst.UP_LEFT){
-            	upLmMessage = args;
-            }else if(circleSw == VlilleCst.UP_RIGHT){
-            	upRmMessage = args;
-            }else if(circleSw == VlilleCst.DW_RIGHT){
-            	dwRmMessage = args;
-            }else if (circleSw == VlilleCst.DW_LEFT){
-            	dwLmMessage = args;
-            }else if (circleSw == VlilleCst.ALL){
-            	upLmMessage = args;
-            	upRmMessage= args;
-            	dwRmMessage = args;
-            	dwLmMessage = args;
-            }
+     	var sargs;
+     	
+        if (!(args instanceof Lang.String)) {
+        	sargs = args.toString();
+        
+        }else{
+        	sargs = args;
         }
+            if(circleSw == VlilleCst.UP_LEFT){
+            	upLmMessage = sargs;
+            }else if(circleSw == VlilleCst.UP_RIGHT){
+            	upRmMessage = sargs;
+            }else if(circleSw == VlilleCst.DW_RIGHT){
+            	dwRmMessage = sargs;
+            }else if (circleSw == VlilleCst.DW_LEFT){
+            	dwLmMessage = sargs;
+            }else if (circleSw == VlilleCst.ALL){
+            	upLmMessage = sargs;
+            	upRmMessage= sargs;
+            	dwRmMessage = sargs;
+            	dwLmMessage = sargs;
+            }
+        
         
         Ui.requestUpdate();
     }

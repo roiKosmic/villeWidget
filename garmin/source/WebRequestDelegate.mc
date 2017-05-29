@@ -41,9 +41,10 @@ class WebRequestDelegate extends Ui.BehaviorDelegate {
         
 
         Comm.makeWebRequest(
-            "http://www.chicon.fr/vlille/vlilleWS.php",
+            "https://opendata.lillemetropole.fr/api/records/1.0/search/",
             {
-                "id" => id
+                "dataset" => "vlille-realtime",
+                "refine.libelle"=>id
             },
             {
                 "Content-Type" => Comm.REQUEST_CONTENT_TYPE_URL_ENCODED
@@ -64,7 +65,7 @@ class WebRequestDelegate extends Ui.BehaviorDelegate {
     function onReceiveWR(responseCode, data) {
     	var circleSw = 0;
         if (responseCode == 200) {
-        	var borneId = data["id"].toNumber(); 
+        	var borneId = data["records"][0]["fields"]["libelle"]; 
         	if(borneId == upLCircleId){
         		circleSw = VlilleCst.UP_LEFT;
         	}else if(borneId == dwLCircleId){
@@ -75,10 +76,10 @@ class WebRequestDelegate extends Ui.BehaviorDelegate {
         		circleSw = VlilleCst.DW_RIGHT;
         	}	
 	    	if(parking){
-	    		notify.invoke(data["attachs"],circleSw,parking);
+	    		notify.invoke(data["records"][0]["fields"]["nbPlacesDispo"],circleSw,parking);
 	    	}else{
 	    	
-	    		notify.invoke(data["bikes"],circleSw,parking);
+	    		notify.invoke(data["records"][0]["fields"]["nbVelosDispo"],circleSw,parking);
 	    	}
         } else {
             notify.invoke("Er",VlilleCst.ALL,parking);
