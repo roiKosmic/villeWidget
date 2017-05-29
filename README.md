@@ -6,10 +6,5 @@ Le widget est disponible sur le store Garmin Connect IQ
 
 ## Code
 Dans le dossier Garmin, vous trouverez le code source pour la montre.
-Dans le dossier serveur, vous trouverez le code qui convertit le xml en json. En effet l'api vlille renvoie un xml avec les informations suivantes:
-* Vélo disponible (bikes)
-* Emplacement libre (attach)
-* Adresse de la borne
-
-Le code php converti le xml en json car l'api Garmin ne peut récupérer que du JSON et ajoute un champ Id pour que le code retrouve la correspondance (retour asynchrone)
+Dans le dossier serveur, vous trouverez le code qui convertit le xml en json - ce code n'est plus nécessaire depuis la version 1.1 du code présent dans le dossier Garmin. L'API officiel renvoie désormais du code json interpretable par le sdk Garmin. Le code serveur est laissé en exemple pour une conversion simple xml -> json en php.
 
