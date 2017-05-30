@@ -2,7 +2,9 @@
     <iq:application entry="VlilleWidgetApp" id="FD75B2BE2FBA4259827E64CE45FACFDE" launcherIcon="@Drawables.LauncherIcon" minSdkVersion="1.3.1" name="@Strings.AppName" type="widget">
 
         <iq:products>
+            <iq:product id="fr630"/>
             <iq:product id="fr235"/>
+            <iq:product id="fr735xt"/>
             <iq:product id="fr230"/>
         </iq:products>
 
