@@ -76,10 +76,10 @@ class WebRequestDelegate extends Ui.BehaviorDelegate {
         		circleSw = VlilleCst.DW_RIGHT;
         	}	
 	    	if(parking){
-	    		notify.invoke(data["records"][0]["fields"]["nbPlacesDispo"],circleSw,parking);
+	    		notify.invoke(data["records"][0]["fields"]["nbplacesdispo"],circleSw,parking);
 	    	}else{
 	    	
-	    		notify.invoke(data["records"][0]["fields"]["nbVelosDispo"],circleSw,parking);
+	    		notify.invoke(data["records"][0]["fields"]["nbvelosdispo"],circleSw,parking);
 	    	}
         } else {
             notify.invoke("Er",VlilleCst.ALL,parking);

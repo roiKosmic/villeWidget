@@ -1,0 +1,14 @@
+<layout id="MainLayout" background="Graphics.COLOR_WHITE">
+    <bitmap id="vlilleLogo" x="center" y="center" filename="../../resources/images/vlille.png" />
+    <drawable id="circles" />
+    <label id="circleUpL" x="65" y="85" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_BLACK" />
+ 	<label id="circleUpR" x="200" y="85" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_BLACK" />
+	<label id="circleDownL" x="80" y="155" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_BLACK" />
+ 	<label id="circleDownR" x="135" y="155" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_BLACK" />
+ 	
+ 	<label id="upLmMessage" x="40" y="50" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_WHITE" />
+ 	<label id="upRmMessage" x="175" y="50" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_WHITE" />
+ 	<label id="dwLmMessage" x="40" y="130" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_WHITE" /> 
+ 	<label id="dwRmMessage" x="175" y="130" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_WHITE" />  
+ 	 
+</layout>

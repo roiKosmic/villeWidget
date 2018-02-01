@@ -12,18 +12,19 @@ class VlilleWidgetView extends Ui.View {
 	var circleDownL;
 	var title;
 	var type;
+	var logo;
 	hidden var upRmMessage = "-";
 	hidden var upLmMessage = "-";
 	hidden var dwRmMessage = "-";
 	hidden var dwLmMessage = "-";
     function initialize() {
         View.initialize();
-        circles = new Rez.Drawables.circles();
+        //circles = new Rez.Drawables.circles();
     }
 
     // Load your resources here
     function onLayout(dc) {
-        setLayout(Rez.Layouts.MainLayout(dc));
+        
         
          circleUpR =  Application.getApp().getProperty("circleUpRName");
          circleUpL = Application.getApp().getProperty("circleUpLName");
@@ -31,6 +32,11 @@ class VlilleWidgetView extends Ui.View {
          circleDownL = Application.getApp().getProperty("circleDownLName");
          title = Ui.loadResource( Rez.Strings.title );
          type = Ui.loadResource(Rez.Strings.parking);
+         logo = Ui.loadResource(Rez.Drawables.vlilleLogo);
+      
+     
+         setLayout(Rez.Layouts.MainLayout(dc));
+            
         }
 
     // Called when this View is brought to the foreground. Restore
@@ -41,12 +47,8 @@ class VlilleWidgetView extends Ui.View {
 
     // Update the view
     function onUpdate(dc) {
-        // Call the parent onUpdate function to redraw the layout
-       
-		dc.clear();
+        // Call the parent onUpdate function to redraw the layout	
         View.onUpdate(dc);
-        circles.draw(dc);
-        dc.clear();
         dc.setColor( Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT );
         dc.drawText(105,0,Gfx.FONT_MEDIUM,title,Gfx.TEXT_JUSTIFY_CENTER);
         if(parking_){
@@ -54,18 +56,35 @@ class VlilleWidgetView extends Ui.View {
         }else{
         	dc.drawText(105,20,Gfx.FONT_SMALL,Ui.loadResource(Rez.Strings.retrait),Gfx.TEXT_JUSTIFY_CENTER);
         }
-        dc.drawText( 65, 85, Gfx.FONT_SMALL,circleUpL , Gfx.TEXT_JUSTIFY_VCENTER );
-        dc.drawText( 200, 85, Gfx.FONT_SMALL, circleUpR, Gfx.TEXT_JUSTIFY_VCENTER );
-        dc.drawText( 80, 155, Gfx.FONT_SMALL,circleDownL , Gfx.TEXT_JUSTIFY_RIGHT );
-        dc.drawText( 135, 155, Gfx.FONT_SMALL,circleDownR , Gfx.TEXT_JUSTIFY_LEFT );
+       
+     
+        
+        var view = View.findDrawableById("circleUpL");
+        view.setText(circleUpL);
+         view = View.findDrawableById("circleUpR");
+        view.setText(circleUpR);
+        
+         view = View.findDrawableById("circleDownL");
+        view.setText(circleDownL);
         
         
-        dc.setColor(Graphics.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
-        dc.clear();
-        dc.drawText(40, 50, Graphics.FONT_LARGE, upLmMessage, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
-        dc.drawText(175, 50, Graphics.FONT_LARGE, upRmMessage, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
-        dc.drawText(40, 130, Graphics.FONT_LARGE, dwLmMessage, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
-        dc.drawText(175, 130, Graphics.FONT_LARGE, dwRmMessage, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+         view = View.findDrawableById("circleDownR");
+        view.setText(circleDownR);
+        
+        
+      
+        
+         view = View.findDrawableById("upLmMessage");
+        view.setText(upLmMessage);
+         view = View.findDrawableById("upRmMessage");
+        view.setText(upRmMessage);
+        
+         view = View.findDrawableById("dwLmMessage");
+        view.setText(dwLmMessage);
+        
+        
+         view = View.findDrawableById("dwRmMessage");
+        view.setText(dwRmMessage);
     }
 
     // Called when this View is removed from the screen. Save the

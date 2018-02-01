@@ -1,5 +1,7 @@
 <resources>
     <bitmaps>
+    <bitmap id="LauncherIcon" filename="./images/launcher_icon2.png" />
+    <bitmap id="vlilleLogo" x="center" y="center" filename="./images/vlille.png" />
     </bitmaps>
 
     <fonts>
