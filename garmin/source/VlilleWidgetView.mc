@@ -1,6 +1,8 @@
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
 using VlilleCst;
+using Toybox.Timer as Timer;
+
 class VlilleWidgetView extends Ui.View {
 	
 	
@@ -12,11 +14,12 @@ class VlilleWidgetView extends Ui.View {
 	var circleDownL;
 	var title;
 	var type;
+	var type2;
 	var logo;
-	hidden var upRmMessage = "-";
-	hidden var upLmMessage = "-";
-	hidden var dwRmMessage = "-";
-	hidden var dwLmMessage = "-";
+	hidden var upRmMessage;
+	hidden var upLmMessage;
+	hidden var dwRmMessage;
+	hidden var dwLmMessage;
     function initialize() {
         View.initialize();
         //circles = new Rez.Drawables.circles();
@@ -25,7 +28,8 @@ class VlilleWidgetView extends Ui.View {
     // Load your resources here
     function onLayout(dc) {
         
-        
+         var myTimer = new Timer.Timer();
+    	 myTimer.start(method(:timerCallback), 1000, true);
          circleUpR =  Application.getApp().getProperty("circleUpRName");
          circleUpL = Application.getApp().getProperty("circleUpLName");
          circleDownR = Application.getApp().getProperty("circleDownRName");
@@ -33,8 +37,11 @@ class VlilleWidgetView extends Ui.View {
          title = Ui.loadResource( Rez.Strings.title );
          type = Ui.loadResource(Rez.Strings.parking);
          logo = Ui.loadResource(Rez.Drawables.vlilleLogo);
-      
-     
+      	 type2 = Ui.loadResource(Rez.Strings.retrait);
+     	 upRmMessage = "-";
+		 upLmMessage = "-";
+		 dwRmMessage = "-";
+		 dwLmMessage = "-";
          setLayout(Rez.Layouts.MainLayout(dc));
             
         }
@@ -54,7 +61,7 @@ class VlilleWidgetView extends Ui.View {
         if(parking_){
         	dc.drawText(105,20,Gfx.FONT_SMALL,type,Gfx.TEXT_JUSTIFY_CENTER);
         }else{
-        	dc.drawText(105,20,Gfx.FONT_SMALL,Ui.loadResource(Rez.Strings.retrait),Gfx.TEXT_JUSTIFY_CENTER);
+        	dc.drawText(105,20,Gfx.FONT_SMALL,type2,Gfx.TEXT_JUSTIFY_CENTER);
         }
        
      
@@ -85,6 +92,7 @@ class VlilleWidgetView extends Ui.View {
         
          view = View.findDrawableById("dwRmMessage");
         view.setText(dwRmMessage);
+        
     }
 
     // Called when this View is removed from the screen. Save the
@@ -119,7 +127,13 @@ class VlilleWidgetView extends Ui.View {
             }
         
         
-        Ui.requestUpdate();
+      
     }
-
+    
+    function timerCallback() {
+    	Ui.requestUpdate();
+    }
 }
+    
+
+

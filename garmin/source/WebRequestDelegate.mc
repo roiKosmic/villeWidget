@@ -38,8 +38,7 @@ class WebRequestDelegate extends Ui.BehaviorDelegate {
 	
 	}
     function makeRequest(id) {
-        
-
+   
         Comm.makeWebRequest(
             "https://opendata.lillemetropole.fr/api/records/1.0/search/",
             {
